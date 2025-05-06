@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useEffect, useRef } from "react";
 
 export default function Home() {
@@ -7,7 +8,7 @@ export default function Home() {
   useEffect(() => {
     const handleVisibilityChange = () => {
       if (document.visibilityState === "hidden") {
-        // タブが非アクティブになったら動画を停止
+        // Pause the video when the tab is inactive.
         if (videoRef.current) {
           videoRef.current.pause();
         }
@@ -23,7 +24,6 @@ export default function Home() {
   return (
     <video ref={videoRef} controls width="640">
       <source src="sample.mp4" type="video/mp4" />
-      お使いのブラウザは video タグをサポートしていません。
     </video>
   );
 }
